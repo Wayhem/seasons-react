@@ -16,7 +16,7 @@ class App extends Component {
             );
     }
 
-    render(){
+    renderContent() {
         if(!this.state.errorMessage && this.state.lat){
             return <SeasonDisplay latitude={this.state.lat} />
         } else if(this.state.errorMessage && !this.state.lat){
@@ -24,6 +24,14 @@ class App extends Component {
         } else {
             return <Spinner message="Please allow location request" />
         }
+    }    
+    
+    render(){
+        return (
+            <div>
+                {this.renderContent()}
+            </div>
+        );
     }
 };
 
