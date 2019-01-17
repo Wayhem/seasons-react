@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
+import './SeasonDisplay.css';
 
 const seasonConf = {
     summer: {
@@ -23,10 +24,10 @@ const SeasonDisplay = (props) => {
     const season = getSeason(props.latitude, new Date().getMonth());
     const { display, nameIcon } = seasonConf[season];
 
-    return <div>
-    <Icon name={nameIcon} size='huge' />
+    return <div className={`season-display ${season}`}>
+    <Icon className='icon-left' name={nameIcon} size='massive' />
     <h1>{display}</h1>
-    <Icon name={nameIcon} size='huge' />
+    <Icon className='icon-right' name={nameIcon} size='massive' />
     </div>
 };
 
